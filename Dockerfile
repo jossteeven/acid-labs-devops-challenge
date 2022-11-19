@@ -1,6 +1,5 @@
-FROM python:3.7
+FROM tiangolo/uwsgi-nginx-flask:python3.8
 COPY ./app /app
 WORKDIR /app
 RUN pip install -r requirements.txt
-EXPOSE $PORT
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+EXPOSE 80
