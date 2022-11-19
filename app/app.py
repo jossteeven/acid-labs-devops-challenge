@@ -28,7 +28,7 @@ def predict():
     print(data)
     output=pickle_model.predict(np.array(data).reshape(1,-1))
     print(output)
-    return render_template("home.html",prediction_text="The House price prediction is {}".format(output))
+    return render_template("home.html",prediction_text="La probabilidad de retraso es: {}".format(output))
 
 
 
