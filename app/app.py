@@ -7,19 +7,19 @@ import pandas as pd
 
 app=Flask(__name__)
 ## Load the model
-pickle_model=pickle.load(open('pickle_model.pkl','rb'))
+pickle_model=pickle.load(open('app/pickle_model.pkl','rb'))
 @app.route('/')
 def home():
     return render_template('home.html')
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
+    print("inside api")
     data=request.json['data']
-    print(data)
-    print(np.array(list(data.values())).reshape(1,-1))
+    print(type(data))
     output=pickle_model.predict(np.array(data).reshape(1,-1))
     print(output[0])
-    return jsonify(output[0])
+    return jsonify("{}".format(output[0]))
 
 @app.route('/predict',methods=['POST'])
 def predict():
