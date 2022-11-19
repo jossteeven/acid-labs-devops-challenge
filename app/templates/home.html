@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>LATAM AIRLINES Prediction Model</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="FI" placeholder="FI" required="required" /><br>
+    	<input type="text" name="VI" placeholder="VI" required="required" /><br>
+        <input type="text" name="OI" placeholder="OI" required="required" /><br>
+        <input type="text" name="DI" placeholder="DI" required="required" /><br>
+        <input type="text" name="EI" placeholder="EI" required="required" /><br>
+        <input type="text" name="FO" placeholder="FO" required="required" /><br>
+        <input type="text" name="VO" placeholder="VO" required="required" /><br>
+        <input type="text" name="OO" placeholder="OO" required="required" /><br>
+        <input type="text" name="DO" placeholder="DO" required="required" /><br>
+        <input type="text" name="EO" placeholder="EO" required="required" /><br>
+        <input type="text" name="DIA" placeholder="DIA" required="required" /><br>
+        <input type="text" name="MES" placeholder="MES" required="required" /><br>
+        <input type="text" name="ANO" placeholder="ANO" required="required" /><br>
+        <input type="text" name="DIANOM" placeholder="DIANOM" required="required" /><br>
+        <input type="text" name="TIPOVUELO" placeholder="TIPOVUELO" required="required" /><br>
+        <input type="text" name="OPERA" placeholder="OPERA" required="required" /><br>
+        <input type="text" name="SIGLAORI" placeholder="SIGLAORI" required="required" /><br>
+        <input type="text" name="SIGLADES" placeholder="SIGLADES" required="required" /><br>
+        <input type="text" name="FI1" placeholder="FI1" required="required" /><br>
+    	<input type="text" name="VI11" placeholder="VI11" required="required" /><br>
+        <input type="text" name="OI1" placeholder="OI1" required="required" /><br>
+        <input type="text" name="DI1" placeholder="DI1" required="required" /><br>
+        <input type="text" name="EI1" placeholder="EI1" required="required" /><br>
+        <input type="text" name="FO1" placeholder="FO1" required="required" /><br>
+        <input type="text" name="VO1" placeholder="VO1" required="required" /><br>
+        <input type="text" name="OO1" placeholder="OO1" required="required" /><br>
+        <input type="text" name="DO1" placeholder="DO1" required="required" /><br>
+        <input type="text" name="EO1" placeholder="EO1" required="required" /><br>
+        <input type="text" name="DIA1" placeholder="DIA1" required="required" /><br>
+        <input type="text" name="MES1" placeholder="MES1" required="required" /><br>
+        <input type="text" name="ANO1" placeholder="ANO1" required="required" /><br>
+        <input type="text" name="DIANOM1" placeholder="DIANOM1" required="required" /><br>
+        <input type="text" name="TIPOVUELO1" placeholder="TIPOVUELO1" required="required" /><br>
+        <input type="text" name="OPERA1" placeholder="OPERA1" required="required" /><br>
+        <input type="text" name="SIGLAORI1" placeholder="SIGLAORI1" required="required" /><br>
+        <input type="text" name="SIGLADES1" placeholder="SIGLADES1" required="required" /><br>
+        <input type="text" name="SIGLADES2" placeholder="SIGLADES2" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>

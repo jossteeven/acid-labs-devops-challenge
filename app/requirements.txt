@@ -16,5 +16,3 @@ xgboost
 scikit-learn
 pickle5
 numpy
-matplotlib
-gunicorn
