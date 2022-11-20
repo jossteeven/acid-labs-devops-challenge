@@ -56,12 +56,9 @@ jobs:
     needs: build
     name: Test Web App Deployed
     runs-on: ubuntu-latest
-    container: skandyla/wrk
+    container: jossteeven/custom_wrk
     steps: 
-      # Check-out your repository.
-      - name: Checkout
-        uses: actions/checkout@v2
-
+    
       - name: Latency Test - HTTP Benchmark
         run: (wrk -t12 -c50000 -d45s -s .test/request.lua https://acid-lab-jossteeven.herokuapp.com/predict_api)
 
