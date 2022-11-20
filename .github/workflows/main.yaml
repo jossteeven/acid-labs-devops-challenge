@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build Image to Deploy
     steps:
       # Check-out your repository.
       - name: Checkout
@@ -53,6 +54,7 @@ jobs:
   # Benchmark that execute the requered test
   test:
     needs: build
+    name: Test Web App Deployed
     runs-on: ubuntu-latest
     container: skandyla/wrk
     steps: 
