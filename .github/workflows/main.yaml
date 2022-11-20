@@ -52,6 +52,7 @@ jobs:
           process_type: web
   # Benchmark that execute the requered test
   test:
+    needs: build
     runs-on: ubuntu-latest
     container: skandyla/wrk
     steps: 
@@ -59,6 +60,7 @@ jobs:
         run: (wrk -t12 -c50000 -d45s https://acid-lab-app.herokuapp.com/)
 
   push_to_registry:
+    needs: test
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -77,4 +79,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: jossteeven/acidlab_ml_model_challenge:latest
+          tags: jossteeven/acidlab-ml-model-challenge:latest
