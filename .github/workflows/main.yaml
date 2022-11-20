@@ -77,5 +77,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: jossteeven/acid-lab-ml-model-challenge:latest, jossteeven/acid-lab-ml-model-challenge:${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: jossteeven/acidlab_ml_model_challenge:latest
