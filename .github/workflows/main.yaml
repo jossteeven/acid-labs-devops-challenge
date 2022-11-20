@@ -58,8 +58,12 @@ jobs:
     runs-on: ubuntu-latest
     container: skandyla/wrk
     steps: 
+      # Check-out your repository.
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Latency Test - HTTP Benchmark
-        run: (wrk -t12 -c50000 -d45s https://acid-lab-app.herokuapp.com/)
+        run: (wrk -t12 -c50000 -d45s -s .test/request.lua https://acid-lab-jossteeven.herokuapp.com/predict_api)
 
   push_to_registry:
     needs: test
