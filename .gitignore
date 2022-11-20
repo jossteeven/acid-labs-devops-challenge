@@ -1,1 +1,5 @@
-.ipynb_checkpoints
+./ipynb_checkpoints
+infrastructure/terraform.tfstate
+infrastructure/terraform.tfstate.backup
+infrastructure/.terraform
+infrastructure/.terraform.lock.hcl
