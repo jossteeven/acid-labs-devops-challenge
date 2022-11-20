@@ -58,9 +58,9 @@ jobs:
     runs-on: ubuntu-latest
     container: jossteeven/custom_wrk
     steps: 
-    
+
       - name: Latency Test - HTTP Benchmark
-        run: (wrk -t12 -c50000 -d45s -s .test/request.lua https://acid-lab-jossteeven.herokuapp.com/predict_api)
+        run: (wrk -t12 -c50000 -d45s -s request.lua https://acid-lab-jossteeven.herokuapp.com/predict_api)
 
   push_to_registry:
     needs: test
